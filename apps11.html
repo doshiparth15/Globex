@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Travel-Flight-Car-Hotels-Apps | Globexploration</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Download the app related to most of the cities in the world for the Simple travel guide, check places for their reviews, price levels, location, and other details">
+      <meta name="keywords" content="cities, cities app, travel guide, restaurant, hotel, transport details, health places in cities, shopping centers">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#20072c">
+      <meta name="robots" content="index,follow">
+      <link rel="manifest" href="https://globexploration.com/manifest.json">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+      <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+      <!-- <link rel="stylesheet" type="text/css" href="styles/animate.css"> -->
+      <link href="styles/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+      <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+      <style>
+         .pagination {
+         display: inline-block;
+         }
+         .pagination a {
+         color: black;
+         float: left;
+         padding: 8px 16px;
+         text-decoration: none;
+         }
+         .pagination a.active {
+         background-color: #4CAF50;
+         color: white;
+         border-radius: 5px;
+         }
+         .pagination a:hover:not(.active) {
+         background-color: #ddd;
+         border-radius: 5px;
+         }
+         body,
+         h1,
+         h2,
+         h3,
+         h4,
+         h5,
+         h6 {
+         font-family: "Raleway", sans-serif
+         }
+         .gin {
+         padding-bottom: 20px;
+         padding-top: 24%;
+         width: 65%;
+         margin-left: 16%;
+         margin-top: -10%;
+         }
+         .color {
+         color: #000000;
+         text-align: center;
+         font-size: 20px
+         }
+         .name {
+         border: 0;
+         }
+         .name:hover {
+         background: transparent;
+         color: black;
+         }
+         .header {
+         position: fixed;
+         width: 100%;
+         background: #1f0733;
+         z-index: 12;
+         }
+         .gex {
+         margin-top: 13%;
+         margin-left: 1%;
+         border: 2px solid;
+         width: 31.5%;
+         height: 313px;
+         background-image: url(/images/bckgapp.jpg);
+         z-index: 12
+         }
+         .gex:hover {
+         opacity: 0.2
+         }
+         .gle {
+         margin-top: 0%;
+         /* border: 2px solid;
+         background-image: url(/images/bckgapp.jpg);*/
+         margin-left: 0px;
+         }
+         .gle img {
+         width: 85%;
+         }
+         .gle:hover {
+         opacity: 0.7;
+         }
+         .img {
+         width: 70%;
+         height: 270px;
+         margin-left: 12%;
+         }
+         .w3-container img {
+         width: 100%;
+         height: 250px;
+         }
+      </style>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121912355-1"></script>
+         <script>
+             window.dataLayer = window.dataLayer || [];
+         
+             function gtag() {
+                 dataLayer.push(arguments);
+             }
+             gtag('js', new Date());
+         
+             gtag('config', 'UA-121912355-1');
+         </script>
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <script>
+             (adsbygoogle = window.adsbygoogle || []).push({
+                 google_ad_client: "ca-pub-3453270402337037",
+                 enable_page_level_ads: true
+             });
+         </script> -->
+   </head>
+   <body class="w3-light-grey w3-content" style="max-width:1600px">
+      <!-- !PAGE CONTENT! -->
+      <div class="w3-main">
+         <!-- <div class="super_container">
+            Header
+             <header class="header">
+            Main Navigation
+             <nav class="main_nav">
+            <div class="container">
+             <div class="row">
+            
+            
+             Web Beacon                   
+            <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                                    <div class="logo_container">
+                                       <div class="logo">
+                                          <a href="https://www.globexploration.com/"><img src="images/logo.png" alt="logo">GLOBEXPLORATION</a>
+                                       </div>
+                                    </div>
+                                    <div class="main_nav_container ml-auto">
+                                       <ul class="main_nav_list">
+                                          <li class="main_nav_item"><a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a></li>
+                                          <li class="main_nav_item"><a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a></li>
+                                          <li class="main_nav_item"><a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a></li>
+                                          <li class="main_nav_item"><a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a></li>
+                                           <li class="main_nav_item"><a href="https://www.ferries.gr/whitelabel/getEngine.php?affiliate=globalexploration" target="_blank" rel="noopener">Ferry</a></li>
+                                            <li class="main_nav_item"><a href="https://www.globexploration.com/bus.html" target="_blank" rel="noopener">Bus</a></li>
+            
+                                          <li class="main_nav_item"><a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a></li>
+                                          
+            
+                                       </ul>
+                                    </div>
+            
+                                    <div id="envelope" class="main_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener" aria-label="contact"><i class="fa fa-envelope" style="font-size:20px"></i></a></div>
+            
+            
+                                    <ul id="mySidenav" class="sidenav">
+                                       <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                                       <li><a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a></li>
+                                       <li><a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a></li>
+                                       <li><a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a></li>
+                                       <li><a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a></li>
+                                        <li><a href="https://www.ferries.gr/whitelabel/getEngine.php?affiliate=globalexploration" target="_blank" rel="noopener">Ferry</a></li>
+                                            <li><a href="https://www.globexploration.com/bus.html" target="_blank" rel="noopener">Bus</a></li>
+                                       <li><a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a></li>
+                                       <li><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener" aria-label="contact">Contact Us</a></li>
+                                    </ul>
+                                    <span id="toggle" style="font-size:30px;cursor:pointer;color:white;margin-left: 100px;" onclick="openNav()">&#9776;</span>
+                                 </div>
+                              </div>
+                           </div>
+                            </nav>
+                            </header>
+                  </div> -->
+         <!-- Header -->
+         <div id="maindiv">
+            <!-- Return to Top -->
+            <a href="javascript:" id="return-to-top" aria-label="return-to-top"><i class="fa fa-angle-up"></i></a>
+            <!-- First Photo Grid-->
+            <div class="gin">
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=affwl.com.globelexploration&hl=en_US" target="_blank" rel="noopener" title="Globexploration">
+                        <img src="/images/home_apps.jpg" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Globexploration">
+                              <b>Globexploration</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=samarinda.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Samarinda">
+                        <img src="/images/samarinda_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Samarinda">
+                              <b>Samarinda - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=caloocan.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Caloocan">
+                        <img src="/images/caloocan_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Caloocan">
+                              <b>Caloocan - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+           
+            <!-- Second Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=bandarlampung.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Bandar Lampung">
+                        <img src="/images/bandarlampung_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Bandar Lampung">
+                              <b>Bandar Lampung – Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=sheikhupura.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Sheikhupura">
+                        <img src="/images/sheikhupura_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Sheikhupura">
+                              <b>Sheikhupura - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=cebu.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Cebu">
+                        <img src="/images/cebu_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Cebu">
+                              <b>Cebu - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Third Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=kowloon.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Kowloon">
+                        <img src="/images/kowloon_cover" alt="podgorica_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Kowloon">
+                              <b>Kowloon - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=davao.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Davao City">
+                        <img src="/images/davao_cover" alt="pointe_noire_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Davao City">
+                              <b>Davao City - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=quezon.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Quezon">
+                        <img src="/images/quezon_cover" alt="portelizerbeth_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Quezon">
+                              <b>Quezon - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Fourth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tungchung.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Tung chung">
+                        <img src="/images/chung_cover" alt="portharcourt_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Tung chung">
+                              <b>Tung chung - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=caloocan.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Tsuen Wan">
+                        <img src="/images/tsuen_cover" alt="portlouis_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Tsuen Wan">
+                              <b>Tsuen Wan - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tsuenwan.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Bienhoa">
+                        <img src="/images/bienhoa_cover" alt="port_moresby_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Bienhoa">
+                              <b>Bienhoa - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Fifth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=nhatrang.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Nha trang">
+                        <img src="/images/trang_cover" alt="portofspain_cover" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Nha trang">
+                              <b>Nha trang - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=haiduong.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Hai Duong">
+                        <img src="/images/duong_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Hai Duong">
+                              <b>Hai Duong - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=vinh.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Vinh">
+                        <img src="/images/vinh_cover" alt="Vinh" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Vinh">
+                              <b>Vinh - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Sixth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=arrayyan.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Ar Rayyan">
+                        <img src="/images/rayyan_cover" alt="windhoek" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Ar Rayyan">
+                              <b>Ar Rayyan - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=georgetown.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Georgetown">
+                        <img src="/images/georgetown_cover" alt="Georgetown" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Georgetown">
+                              <b>Georgetown - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=austin.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Austin">
+                        <img src="/images/austin_cover" alt="Austin" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Austin">
+                              <b>Austin - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Seventh Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=ummsalalmuhammad.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Umm Salal Muhammad">
+                        <img src="/images/muhammad_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Umm Salal Muhammad">
+                              <b>Umm Salal Muhammad - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=ipoh.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Ipoh">
+                        <img src="/images/ipoh_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Ipoh">
+                              <b>Ipoh - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=alwakrah.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Al Wakrah">
+                        <img src="/images/alwakrah_cover" alt="Al Wakrah" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Al Wakrah">
+                              <b>Al Wakrah - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Eighth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=petalingjaya.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Petaling jaya">
+                        <img src="/images/petalingjaya_cover" alt="Xiamen" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Petaling jaya">
+                              <b>Petaling jaya - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=alkhawr.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Al Khawr">
+                        <img src="/images/alkhawr_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Al Khawr">
+                              <b>Al Khawr - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=erdenet.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Erdenet">
+                        <img src="/images/erdenet_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Erdenet">
+                              <b>Erdenet - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Nineth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=pokhara.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Pokhara">
+                        <img src="/images/pokhara.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Pokhara">
+                              <b>Pokhara - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=poznan.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Poznan">
+                        <img src="/images/poznan.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Poznan">
+                              <b>Poznan - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=darkhan.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Darkhan">
+                        <img src="/images/darkhan.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Darkhan">
+                              <b>Darkhan - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Tenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=shahalam.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Shah Alam">
+                        <img src="/images/shahalam.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Shah Alam">
+                              <b>Shah Alam - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=malaga.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Malaga">
+                        <img src="/images/malaga.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Malaga">
+                              <b>Malaga - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=fuvahmulah.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Fuvahmulah">
+                        <img src="/images/fuvahmulah.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Fuvahmulah">
+                              <b>Fuvahmulah - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Eleventh Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=lalitpur.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Lalitpur">
+                        <img src="/images/lalitpur.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Lalitpur">
+                              <b>Lalitpur - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=hithadhoo.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Hithadhoo">
+                        <img src="/images/hithadhoo.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Hithadhoo">
+                              <b>Hithadhoo - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  --------------------
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=yinchuan.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Yinchuan">
+                        <img src="/images/yinchuan.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Yinchuan">
+                              <b>Yinchuan - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Twelveth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zagrebcentar.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Zagreb Centar">
+                        <img src="/images/suzhou_cover" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Zagreb Centar">
+                              <b>Zagreb Centar - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zaozhuang.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Ribeirao Zaozhuang">
+                        <img src="/images/tadjourah_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Ribeirao Zaozhuang">
+                              <b>Zaozhuang - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zaporizhia.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Zaporizhia">
+                        <img src="/images/zaporizhia_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Zaporizhia">
+                              <b>Zaporizhia - Wiki </b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Thirteenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zaragoza.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Zaragoza">
+                        <img src="/images/zaragoza_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Zaragoza">
+                              <b>Zaragoza - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zhangjiakou.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Zhangjiakou">
+                        <img src="/images/zhangjiakou_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Zhangjiakou">
+                              <b>Zhangjiakou - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zhinjiang.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Zhanjiang">
+                        <img src="/images/zhinjiang_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Zhanjiang">
+                              <b>Zhanjiang - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Fourteenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zhenjiang.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Zhenjiang">
+                        <img src="/images/zhenjiang_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Zhenjiang">
+                              <b>Zhenjiang - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=zunyi.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Zunyi">
+                        <img src="/images/zunyi_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Zunyi">
+                              <b>Zunyi - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  ---
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tangshan.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in São Tangshan">
+                        <img src="/images/tangshan_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in São Tangshan">
+                              <b>Tangshan - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Fifteenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tarawa.travel.guide.guide" target="_blank" rel="noopener" title="Best rent a car deals in Hong Tarawa">
+                        <img src="/images/tarawa_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Hong Tarawa">
+                              <b>Tarawa - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tashkent.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Tashkent">
+                        <img src="/images/tashkent_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Tashkent">
+                              <b>Tashkent - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tbilisi.travel.guide.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Kuala Tbilisi - Canada">
+                        <img src="/images/tbilisi_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Kuala Scarborough - Tbilisi">
+                              <b>Tbilisi - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Sixteenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tegucigalpa.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Tegucigalpa">
+                        <img src="/images/tegucigalpa_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Tegucigalpa">
+                              <b>Tegucigalpa - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=teresina.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Teresina">
+                        <img src="/images/teresina_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Teresina">
+                              <b>Teresina – Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=teseney.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Teseney">
+                        <img src="/images/teseney_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Teseney">
+                              <b>Teseney - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            
+            <!-- Seventeenth Photo Grid-->
+            
+               <div class="w3-row-padding">
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=thies.travel.guide" target="_blank" rel="noopener" title="Best rent a car deals in Thies">
+                        <img src="/images/thies_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Thies">
+                              <b>Thies - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=thimphu.travel.guide" target="_blank" rel="noopener" title="Best flights deals in Thimphu">
+                        <img src="/images/thimphu_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best Hotels deals in Thimphu">
+                              <b>Thimphu - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                     <a class="name" href="https://play.google.com/store/apps/details?id=tijuana.travel.guide" target="_blank" rel="noopener" title="Best cheap tickets deals in Tijuana">
+                        <img src="/images/tijuana_cover.png" alt="Norway" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                           <p class="color" title="Best rent a car deals in Tijuana">
+                              <b>Tijuana - Wiki</b>
+                           </p>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="pagination">
+               <a href="https://www.globexploration.com/apps10.html">&laquo;</a>
+               <a href="https://www.globexploration.com/apps7.html">7</a>
+               <a href="https://www.globexploration.com/apps8.html">8</a>
+               <a href="https://www.globexploration.com/apps9.html">9</a>
+               <a href="https://www.globexploration.com/apps10.html">10</a>
+               <a href="https://www.globexploration.com/apps11.html" class="active">11</a>
+               <a href="https://www.globexploration.com/apps15.html">15</a>
+               <a href="https://www.globexploration.com/apps15.html">&raquo;</a>
+            </div>
+            <!-- Footer -->
+            <!-- <div class="copyright">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-lg-3 order-lg-1 order-2  ">
+                           <div class="copyright_content d-flex flex-row align-items-center">
+                               <div class="cpright">
+                                   Copyright &copy; 2018 All rights reserved | GLOBEXPLORATION
+               
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-5 order-lg-2 order-1">
+                           <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+                               <div class="footer_nav">
+                                   <ul class="footer_nav_list">
+                              <li class="footer_nav_item"><a href="https://www.facebook.com/Globe-Exploration-1889860841108568/?modal=admin_todo_tour" target="_blank" rel="noopener" aria-label="facebook"><i class="fa fa-facebook-official" style="font-size:24px"></i></a></li>
+                              <li class="footer_nav_item"><a href="https://www.instagram.com/globexploration1/" target="_blank" rel="noopener" aria-label="instagram"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+                              <li class="footer_nav_item"><a href="https://twitter.com/globexploration" target="_blank" rel="noopener" aria-label="twitter"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+                              <li class="footer_nav_item"><a href="https://in.pinterest.com/globexploration/" target="_blank" rel="noopener" aria-label="pinterest"><i class="fa fa-pinterest" style="font-size:24px"></i></a></li>
+                              <li class="footer_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener" aria-label="contact"><i class="fa fa-envelope" style="font-size:24px"></i></a></li>
+                           </ul>
+                               </div>
+                           </div>
+                       </div>
+               
+                       <div class="col-lg-3 order-lg-2 order-1">
+               <div class="policy" style="margin-top: 14px;">
+               <ul>
+               <li class="plsclass">
+               <a href="https://www.globexploration.com/privacy-policy.html" style="color:#FFFFFF;">Privacy Policy</a>
+               </li>
+               </ul>
+               </div>
+               </div>
+               
+                   </div>
+               </div>
+               </div> -->
+            <!-- End page content -->
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/advertisement.js"></script>
+      <script src="js/jquery.adi.js"></script>
+      <script>
+         // app.js
+         if ('serviceWorker' in navigator) {
+           window.addEventListener('load', function() {
+             navigator.serviceWorker.register('/sw.js').then(function(registration) {
+               // Registration was successful
+               console.log('ServiceWorker registration successful with scope: ', registration.scope);
+             }, function(err) {
+               // registration failed :(
+               console.log('ServiceWorker registration failed: ', err);
+             });
+           });
+         }
+      </script>
+      <script>
+         $(document).ready(function () {
+             $.adi({
+                 theme: 'dark',
+                 onOpen: function (el) {
+                     el.find('.jquery-adi_content').addClass('animated bounceInDown');
+                      $("#maindiv").css("display", "none")
+                 },
+                 onClose: function (el) {
+                 }
+             });
+         });
+      </script>
+      <script>
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-36251023-1']);
+         _gaq.push(['_setDomainName', 'jqueryscript.net']);
+         _gaq.push(['_trackPageview']);
+         
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+         
+      </script>
+   </body>
+</html>

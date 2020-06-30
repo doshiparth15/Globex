@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+          <title>OneWay-Bus-List|Globexploration</title>
+
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#20072c">
+      <meta name="robots" content="index,follow">
+       <meta name="description" content="Book bus tickets online with Globexploration. Online Bus 
+    tickets booking for volvo,luxury, semi deluxe and other buses at lowest prices and best offers.">
+   <meta name="keywords" content="online bus ticket booking, bus booking, bus ticket 
+    booking, bus tickets,bus,volvo ac bus booking,book bus tickets online.">
+      <link rel="manifest" href="https://globexploration.com/manifest.json">
+      <link rel="alternate" hreflang="en" href="https://globexploration.com" />
+      <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+      <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="styles/animate.css">
+      <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      
+       
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+      <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+
+
+
+<style type="text/css">
+
+body{
+  color: #101010;
+  }
+	.header {
+    position: relative;
+    width: 100%;
+    background: rgb(54, 19, 84);
+    z-index: 12;
+    
+}
+
+
+.homeWidgetWrap {
+    margin-bottom: 120px;
+ }
+ .form-control {
+    color: #101010;
+}
+
+.table-filter th{
+      padding: 15px;
+
+}
+
+caption {
+      caption-side: top;
+      text-align: center;
+      color: black;
+      background-color: #989494;
+    font-weight: bold;
+}
+
+.locationList{
+  list-style-type: none;
+      padding: 4px;
+      
+      cursor: pointer;
+     
+
+}
+
+.copyright{
+  margin-top: 20%;
+}
+
+
+#locationdata{
+  cursor: pointer;
+}
+.locations{
+      margin-bottom: 2px;
+    background-color: #dcd8d8;
+    padding: 8px;
+}
+
+.locations:hover{
+  background-color: wheat;
+}
+
+.ng-table-sort-header{
+  background-color: gray;
+}
+
+#tocity{
+      margin-left: 10px;
+    margin-right: 10px;
+}
+#fromcity{
+  margin-right: 10px;
+ margin-right: 10px;
+
+}
+.table{
+  text-align: center;
+}
+.table li{
+  text-align: left;
+}
+.From-To{
+  background-color: #c3b8b8;
+    padding: 30px;
+    padding-right: 703px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.haults{
+         padding-left: 20px;
+    padding-right: 18px;
+    margin-left: 6px;
+        background-color: orange;
+}
+
+.swap img{
+  width: 3%;
+    margin-left: 41%;
+    margin-top: -6%;
+}
+.box{
+      padding-right: 676px;
+    background-color: gray;
+    margin-bottom: 20px;
+}
+::-moz-selection { /* Code for Firefox */
+   
+    background: #94baec;
+}
+
+::selection {
+   
+    background: #94baec;
+}
+
+.from{
+          width: 408px;
+          height: 48px;
+          background-color: white;
+        }
+
+        .to{
+          width: 408px;
+          height: 48px;
+          background-color: white;
+          margin-left: 47%;
+          margin-top: -6.4%;
+        }
+
+.ng-table th.sortable {
+    cursor: pointer;
+    width: 15%;
+}
+.table .header{
+  background-color: #c3b8b8;
+}
+
+.durtime{
+  color:orange;
+}
+.seatsleft{
+  color:green;
+}
+
+.time{
+      font-size: 16px;
+    font-weight: bold;
+}
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+        
+        ng\:form {
+            display: block;
+        }
+        
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+        
+        .ng-anchor {
+            position: absolute;
+        }
+
+
+@media only screen and (max-width: 900px) {
+
+  .From-To{
+        padding-right: 218px;
+  }
+
+}
+
+ .plsclass{
+  margin-left: 150px;
+}
+
+@media only screen and (max-width: 700px){
+
+  .plsclass{
+  text-align: center;
+  margin-left: 0px;
+  
+  
+}
+
+}
+
+
+
+</style>
+         
+   </head>
+
+   <body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+
+
+   	<div class="super_container">
+ <!-- Header -->
+ <header class="header">
+   <!-- Main Navigation -->
+  <nav class="main_nav">
+    <div class="container">
+     <div class="row">
+
+
+ <!-- Web Beacon -->                   
+  <img src="https://www.globexploration.com//trackme.php?identifier" alt="" >
+
+<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                           <div class="logo">
+                              <a href="https://www.globexploration.com/"><img src="images/logo.png" alt="logo">GLOBEXPLORATION</a>
+                           </div>
+                        </div>
+                        <div class="main_nav_container ml-auto">
+                           <ul class="main_nav_list">
+                              <li class="main_nav_item"><a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a></li>
+                              <li class="main_nav_item"><a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a></li>
+                              <li class="main_nav_item"><a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a></li>
+                              <li class="main_nav_item"><a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a></li>
+                               <li class="main_nav_item"><a href="https://www.ferries.gr/whitelabel/getEngine.php?affiliate=globalexploration" target="_blank" rel="noopener">Ferry</a></li>
+                                <li class="main_nav_item"><a href="https://www.globexploration.com/bus.html" target="_blank" rel="noopener">Bus</a></li>
+
+                              <li class="main_nav_item"><a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a></li>
+                              
+
+                           </ul>
+                        </div>
+
+                        <div id="envelope" class="main_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener"><i class="fa fa-envelope" style="font-size:20px"></i></a></div>
+
+
+                        <ul id="mySidenav" class="sidenav">
+                           <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                           <li><a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a></li>
+                           <li><a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a></li>
+                           <li><a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a></li>
+                           <li><a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a></li>
+                            <li class="main_nav_item"><a href="https://www.ferries.gr/whitelabel/getEngine.php?affiliate=globalexploration" target="_blank" rel="noopener">Ferry</a></li>
+                                <li class="main_nav_item"><a href="https://www.globexploration.com/bus.html" target="_blank" rel="noopener">Bus</a></li>
+                           <li><a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a></li>
+                           <li><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener">Contact Us</a></li>
+                        </ul>
+                        <span id="toggle" style="font-size:30px;cursor:pointer;color:white;margin-left: 100px;" onclick="openNav()">&#9776;</span>
+                     </div>
+                  </div>
+               </div>
+                </nav>
+                </header>
+      </div>
+
+
+         
+<div class="From-To">
+    <span id="fromcity" ng-cloak>{{cityfrom}}</span><i class="fa fa-arrow-right" aria-hidden="true"></i><span id="tocity" ng-cloak>{{cityto}}</span> Depart :</i><span id="departuredata" ng-cloak> {{departdate}}</span>
+    </div><br>
+
+    <div class="loading" id="load" style="display: none;">Loading&#8230;</div>
+
+ <div class="container">
+  <div class="row">
+
+
+
+<div class="table-responsive">
+
+  <table ng-table="tableParams" class="table table-striped" show-filter="true">
+ 
+    
+    <tbody >
+      <tr id="locationdata" ng-repeat-start="list in $data" ng-cloak>
+        <td title="'Depart'" filter="{ DepartureTime: 'text'}" sortable="'DepartureTime'" default-sort-direction="asc" ng-cloak>{{list.DepartureTime}}</td>
+        <td class="durtime" title="'Duration'" filter="{ duration: 'text'}" sortable="'duration'" ng-cloak>{{list.duration}}
+          </td>
+        <td title="'Arrival'" filter="{ ArrivalTime: 'text'}" sortable="'ArrivalTime'" ng-cloak>{{list.ArrivalTime}}</td>
+        <td title="'TravelsName'" filter="{ TravelsName: 'text'}" sortable="'TravelsName'" ng-cloak>{{list.TravelsName}}</td>
+        <td class="seatsleft" title="'Seats'">Seats <br>{{list.RouteSeatTypeDetail.list["0"].SeatsAvailable}}<br> Left</td>
+        <td title="'Totalfare'" sortable="'fare.totalfare'" ng-cloak>&#x20b9;{{list.fare.totalfare}}</td>
+        <td>
+          <!-- <button class="seatselect" ng-click="toggleseats();seatLayout(list.skey,list.BusServiceID)">Select Seats</button> -->
+          <button class="haults" ng-click="togglelocation(list.BusServiceID)">Haults</button>
+        </td>
+      </tr>
+      <tr ng-if="$data.length<1">
+        <td colspan="7">No Bus Available...</td>
+      </tr>
+     
+     
+
+      <tr ng-repeat-end>
+        <td colspan="7" style="display: none;" class="locationList" id="locationdata{{list.BusServiceID}}">
+          <li class="locations" ng-repeat="li in list.BPPrims.list track by $index" ng-cloak>{{li.BPLocation}}</li>
+        </td>
+      </tr>
+
+      <tr ng-if="BusList.length < 1">
+        <td colspan="7">No Bus Available</td>
+      </tr>
+
+  
+
+
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+  <!-- Copyright -->
+     <div class="copyright">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 order-lg-1 order-2  ">
+                  <div class="copyright_content d-flex flex-row align-items-center">
+                     <div class="cpright">
+                        Copyright &copy; 2018
+                        All rights reserved | GLOBEXPLORATION
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-5 order-lg-2 order-1">
+                  <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+                     <div class="footer_nav">
+                        <ul class="footer_nav_list">
+                           <li class="footer_nav_item"><a href="https://www.facebook.com/Globe-Exploration-1889860841108568/?modal=admin_todo_tour" target="_blank" rel="noopener"><i class="fa fa-facebook-official" style="font-size:24px"></i></a></li>
+                           <li class="footer_nav_item"><a href="https://www.instagram.com/globexploration1/" target="_blank" rel="noopener"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+                           <li class="footer_nav_item"><a href="https://twitter.com/globexploration" target="_blank" rel="noopener"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+                           <li class="footer_nav_item"><a href="https://in.pinterest.com/globexploration/" target="_blank" rel="noopener"><i class="fa fa-pinterest" style="font-size:24px"></i></a></li>
+                           <li class="footer_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener"><i class="fa fa-envelope" style="font-size:24px"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+
+            <div class="col-lg-3 order-lg-2 order-1">
+         <div class="policy" style="margin-top: 14px;">
+          <ul>
+          <li class="plsclass">
+            <a href="https://www.globexploration.com/privacy-policy.html" style="color:#685677;">Privacy Policy</a>
+          </li>
+         </ul>
+         </div>
+     </div>
+
+            </div>
+         </div>
+      </div>
+<!-- Copyright Over-->
+
+
+
+
+
+
+   
+      
+	<script>
+	var app = angular.module('myApp',["ngTable"] );
+	app.controller('myCtrl', function($scope, $http, NgTableParams) {
+
+
+
+
+
+
+
+    function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+    $scope.togglelocation = function(id){
+
+       if ($("#locationdata"+id).css('display') == "none") {
+       
+        $("#locationdata"+id).css("display","table-cell");
+      }
+      else{
+        $("#locationdata"+id).css("display","none");
+
+      }
+
+    }
+   
+
+
+ 
+
+
+
+	   $scope.searchFlight = function(){ 
+
+      $("#load").css("display","block")
+
+
+      var str=findGetParameter("depart");
+var newStr = str.replace(/-/g, "");
+
+   var str=findGetParameter("depart");
+var newStr1 = str.replace(/-/g, "");
+
+		    $http({
+		    	url:'https://developer.goibibo.com/api/bus/search/?app_id=831b5193&app_key=fc5b976fda224edb7615f2bc4de8f120&format=json&source='+findGetParameter("from")+'&destination='+findGetParameter("to")+'&dateofdeparture='+newStr+'&dateofarrival='+newStr1,
+
+		    	method:'GET'
+		    })
+		    .then(function mySuccess(response){
+          $("#load").css("display","none")
+
+		    	$scope.BusList = response.data.data.onwardflights;
+          $scope.tableParams = new NgTableParams({}, { dataset: response.data.data.onwardflights});
+        
+        
+		    
+      
+		    },function myError(error){
+          $("#load").css("display","none")
+          
+
+	    	})
+
+
+
+
+
+
+      }
+	    
+
+	  $scope.searchFlight(); 
+
+
+$scope.cityfrom = findGetParameter("from");
+$scope.cityto = findGetParameter("to");
+$scope.departdate = findGetParameter("depart")
+$scope.returnfromdate = findGetParameter("returnfom");
+
+
+
+   
+
+	});
+
+
+	</script>
+
+<script>
+         // app.js
+         if ('serviceWorker' in navigator) {
+           window.addEventListener('load', function() {
+             navigator.serviceWorker.register('/sw.js').then(function(registration) {
+               // Registration was successful
+               console.log('ServiceWorker registration successful with scope: ', registration.scope);
+             }, function(err) {
+               // registration failed :(
+               console.log('ServiceWorker registration failed: ', err);
+             });
+           });
+         }
+      </script>
+
+
+   </body>
+</html>

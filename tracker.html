@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flight-List | Globexploration</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#20072c">
+    <meta name="robots" content="index,follow">
+    <link rel="manifest" href="https://globexploration.com/manifest.json">
+    <link rel="alternate" hreflang="en" href="https://globexploration.com" />
+    <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/animate.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/airportgo.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .header {
+            position: relative;
+            width: 100%;
+            background: rgb(54, 19, 84);
+            z-index: 12;
+            margin-bottom: 30px;
+        }
+        
+        .box {
+            background-color: #2d67b2;
+            width: 1133px;
+            padding: 25px;
+            margin: 25px;
+            height: 400px;
+            margin-left: 8%;
+        }
+        
+        .font {
+            font-size: 30px;
+            font-family: Open Sans, sans-serif;
+            color: white;
+        }
+        
+        .trip1 {
+            color: white;
+        }
+        
+        .trip2 {
+            color: white;
+            margin-left: 19.6%;
+            margin-top: -6.2%;
+        }
+        
+        .trip3 {
+            color: white;
+            margin-left: 47%;
+            padding-bottom: 60px;
+            margin-top: -6.2%;
+        }
+
+         .trip4 {
+            color: white;
+            margin-left: 67%;
+            margin-top: -12%;
+            padding-bottom: 55px;
+          }
+
+          .classe{
+             width: 190px;
+            height: 48px;
+          }
+        
+        .travellers {
+            width: 190px;
+            height: 48px;
+        }
+        
+        .mode {
+            color: white;
+            margin-top: 35px;
+        }
+        
+        .from {
+            width: 408px;
+            height: 48px;
+            background-color: white;
+        }
+        
+        .to {
+            width: 408px;
+            height: 48px;
+            background-color: white;
+            margin-left: 47%;
+            margin-top: -6.4%;
+        }
+        
+        .absFormTxt {
+            font-size: 15px;
+            color: #666;
+            line-height: 1;
+            position: absolute;
+            top: 35%;
+            left: 15px;
+        }
+        
+        .set {
+            margin-left: 2%;
+            height: 48px;
+            width: 343px;
+            border: 0px;
+        }
+        
+        .depart {
+            width: 195px;
+            height: 45px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .return {
+            width: 195px;
+            height: 45px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .button.orange {
+            background: #f26722;
+            color: #fff;
+        }
+        
+        .button.xlarge {
+            font-size: 19px;
+            /*line-height: 1.3;*/
+            padding: 11px 26px;
+        }
+        
+        .button {
+            display: inline-block;
+            height: 53px;
+            border-radius: 27px;
+            overflow: hidden;
+        }
+        
+        .button {
+            cursor: pointer;
+            /*border-radius: 3px;*/
+            /*-webkit-border-radius: 3px;*/
+            /*-moz-border-radius: 3px;*/
+            /*padding: 7px 15px;*/
+            text-align: center;
+            /*color: #fff;*/
+            border: 0;
+            /*font-size: 14px;*/
+            -webkit-appearance: none;
+        }
+        
+        .width100 {
+            width: 20%;
+            margin-left: 50%;
+        }
+        
+        .width200 {
+            width: 100%;
+        }
+        
+        .autoSuggestBoxList li {
+            display: block;
+            float: left;
+            width: 100%;
+            padding: 7px 10px;
+            border-bottom: 1px solid #e6e6e6;
+            cursor: pointer;
+        }
+        
+        .autoSuggestBoxList {
+            width: 100%;
+            font-size: 13px;
+            color: #666;
+            line-height: 1;
+            color: #333;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: #fff;
+            border: 1px solid;
+            border-color: #cbcfe2 #c8cee7 #c4c7d7;
+            border-radius: 1px;
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .fn {
+        margin-left: 47%;
+    top: -21%;
+    color: white;
+
+        }
+
+    .sn {
+    top: -1%;
+    color: white;
+
+        }
+        
+        .autoSuggestBoxList li:hover {
+            background: #2d67b2;
+            color: #fff;
+        }
+        
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; 
+      }
+        
+        .swap {
+            width: 3%;
+            margin-left: 41%;
+            margin-top: -6%;
+        }
+        
+        @charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+        
+        ng\:form {
+            display: block;
+        }
+        
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+        
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+    <header class="header">
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Web Beacon -->
+                    <img src="https://www.globexploration.com//trackme.php?identifier" alt="">
+
+                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <div class="logo">
+                                <a href="https://www.globexploration.com/"><img src="images/logo.png" alt="logo">GLOBEXPLORATION</a>
+                            </div>
+                        </div>
+
+                        <div class="main_nav_container ml-auto">
+                            <ul class="main_nav_list">
+                                <li class="main_nav_item"><a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a></li>
+                                <li class="main_nav_item"><a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a></li>
+                                <li class="main_nav_item"><a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a></li>
+                                <li class="main_nav_item"><a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a></li>
+                                <li class="main_nav_item"><a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a></li>
+                            </ul>
+                        </div>
+
+                        <div id="envelope" class="main_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener"><i class="fa fa-envelope" style="font-size:20px"></i></a></div>
+
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="http://hotels.globexploration.com/" target="_blank" rel="noopener">Hotels</a>
+                            <a href="http://flights.globexploration.com/" target="_blank" rel="noopener">Flights</a>
+                            <a href="https://travel.globexploration.com/" target="_blank" rel="noopener">Travel</a>
+                            <a href="https://www.rentalcars.com/?affiliateCode=technical038&_ga=2.244634629.1210978160.1530009239-1911108851.1530009239" target="_blank" rel="noopener">Car Rental</a>
+                            <a href="https://www.globexploration.com/apps.html" target="_blank" rel="noopener">Apps</a>
+                            <a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener">Contact Us</a>
+                        </div>
+
+                        <span id="toggle" style="font-size:30px;cursor:pointer;color:white;margin-left: 100px;" onclick="openNav()">&#9776;</span>
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="box">
+        <h1 class="font">Track Your Flight</h1>
+     
+        <br>
+        <div class="sn">Airline:</div>
+        <div class="from">
+            <span class="absFormTxt"></span>
+            <input type="text" ng-model="CityNameFrom" ng-keyup="flights()" id="gi_source" autocomplete="off" tabindex="1" placeholder="Enter Name or Flight Code" class="set" required>
+            <ul class="autoSuggestBoxList flt " ng-class="CityNameFrom!=''?'':'dn'">
+                <li ng-repeat="city in finalarray | limitTo: 8" data-index="0" class="" ng-click="selectedValueFrom(city)">
+
+                    <span ng-cloak><i class="fa fa-plane" aria-hidden="true"></i> <b>{{city}}</b><br>
+                                     </span>
+
+                </li>
+            </ul>
+        </div>
+        <!-- <div><img src="/images/swap.svg" class="swap" ng-click="swapValues()" cursor="pointer"></div> -->
+
+        <div class="fn">Flight Number :</div>
+        <div class="to">
+            <span class="absFormTxt"></span>
+            <input type="text" ng-model="CityNameTo" ng-keyup="searchCityName(2)" id="gi_source" autocomplete="off" tabindex="1" placeholder="Enter Your Flight Number" class="set" required>
+            <ul class="autoSuggestBoxList flt" ng-class="CityNameTo!=''?'':'dn'">
+                <!-- <li ng-repeat="city in CityListTo track by $index" data-index="0" class="" ng-click="selectedValueTo(city.ct.n,city.iata)"> -->
+<!-- 
+                    <span ng-cloak><i class="fa fa-plane" aria-hidden="true"></i> <b>{{city.ct.n}}({{city.iata}})</b><br>
+                                     {{city.n}}</span>
+ -->
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div class="trip1">
+            Date:
+            <br>
+
+            <input class="depart" id="datepickerd"><span><i class="fa fa-calendar" style="font-size:24px;margin-left: -3%;color: black;cursor:  pointer;"></i></span>
+        </div>
+
+        <!-- <div class="trip2">
+            Return:
+            <br>
+
+            <input class="return" id="datepickerr"><span><i class="fa fa-calendar" style="font-size:24px;margin-left: -4%;color:  black;cursor:  pointer;"></i></span>
+        </div> -->
+
+     <!--    <div class="trip3">
+            Travellers:
+            <br>
+
+            <input class="travellers" id="travellercount" ng-focus="travellers()" ng-model="totaltravellers"><span><i class="" style=""></i></span>
+
+            <div class="paxMobile paxContainer" ng-if="travels">
+               
+                <ul>
+                  <i class="fa fa-close" ng-click="travel()" style="float: right;margin: 1%"></i>
+                    <li class="roomRow">
+                        <div class="widgetUserBlock fl">
+                            <label class="ico14 db padB5"><span>Adults</span><small class="font12Lt db padT3"> (12+ yrs)</small></label>
+                            <div class="number-spinner">
+                                <button class="fl minSpin" id="adultPaxMinus" data-dir="dwn" ng-click="decrement()">-</button>
+                                <input type="number" id="adultsPaxBox" min="0" class="fl numbSpin" value="1" ng-model="adults">
+                                <button class="fl plusSpin" id="adultPaxPlus" data-dir="up" ng-click="increment()">+</button>
+                            </div>
+                        </div>
+                        <div class="widgetUserBlock fl">
+                            <label class="ico14 db padB5"><span>Children</span><small class="font12Lt db padT3"> (2-12 yrs)</small></label>
+                            <div class="number-spinner">
+                                <button class="fl minSpin" id="childPaxMinus" data-dir="dwn" ng-click="decremen()">-</button>
+                                <input type="number" id="childPaxBox" class="fl numbSpin" value="0" ng-model="child">
+                                <button class="fl plusSpin" id="childPaxPlus" data-dir="up" ng-click="incremen()">+</button>
+                            </div>
+                        </div>
+                        <div class="widgetUserBlock fl" style="margin-left: 69%;margin-top: -16.2%;">
+                            <label class="ico14 db padB5"><span>Infant(s)</span><small class="font12Lt db padT3"> (below 2 yrs)</small></label>
+                            <div class="number-spinner">
+                                <button class="fl minSpin" id="infantPaxMinus" data-dir="dwn" ng-click="decreme()">-</button>
+                                <input type="number" id="infantPaxBox" class="fl numbSpin" value="0" ng-model="infants">
+                                <button class="fl plusSpin" id="infantPaxPlus" data-dir="up" ng-click="increme()">+</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+
+          <!--   <div class="trip4">
+              Class:
+              <br>
+              
+              <select id="class" name="class" class="classe">
+              <option value="E">Economy</option>
+              <option value="B">Business</option>
+              <option value="F">First Class</option>
+              <option value="W">Premium Economy</option>
+            </select>
+            
+              
+            </div> -->
+
+        <!-- <div class="mode">
+
+   Mode: 
+  <select>
+  <option value="one">one</option>
+  <option value="all">all</option>
+</select>
+</div> -->
+
+        <button type="button" class="width100 button orange xlarge" value="Search " id="gi_search_btn" ng-click="sendData()">Let's Go
+        </button>
+
+        <!--  <button type="submit" class="width100 button orange xlarge" value="MinimumFare " id="gi_search_btn" ng-click="" style="margin-left: 12px;">Minimum Fare
+                        </button> -->
+
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+
+            <div class="col-lg-3 order-lg-1 order-2  ">
+                <div class="copyright_content d-flex flex-row align-items-center">
+                    <div class="cpright">
+                        Copyright &copy; 2018 All rights reserved | GLOBEXPLORATION
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 order-lg-2 order-1">
+                <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+                    <div class="footer_nav">
+                        <ul class="footer_nav_list">
+                            <li class="footer_nav_item"><a href="https://www.facebook.com/Globe-Exploration-1889860841108568/?modal=admin_todo_tour" target="_blank" rel="noopener"><i class="fa fa-facebook-official" style="font-size:24px"></i></a></li>
+                            <li class="footer_nav_item"><a href="https://www.instagram.com/globexploration1/" target="_blank" rel="noopener"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+                            <li class="footer_nav_item"><a href="https://twitter.com/globexploration" target="_blank" rel="noopener"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+                            <li class="footer_nav_item"><a href="https://in.pinterest.com/globexploration/" target="_blank" rel="noopener"><i class="fa fa-pinterest" style="font-size:24px"></i></a></li>
+                            <li class="footer_nav_item"><a href="https://www.globexploration.com/contact-us" target="_blank" rel="noopener"><i class="fa fa-envelope" style="font-size:24px"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script src="js/incrementing.js"></script>
+    <script type="text/javascript" src="jquery.datetimepicker.full.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+ <script>
+        $(document).ready(function() {
+            var date = new Date();
+            var currentMonth = date.getMonth();
+            var currentDate = date.getDate();
+            var currentYear = date.getFullYear();
+
+            $('#datepickerd').datepicker({
+                minDate: new Date(currentYear, currentMonth, currentDate),
+                numberOfMonths: 2,
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+
+        $(document).ready(function() {
+            var date = new Date();
+            var currentMonth = date.getMonth();
+            var currentDate = date.getDate();
+            var currentYear = date.getFullYear();
+
+            $('#datepickerr').datepicker({
+                minDate: new Date(currentYear, currentMonth, currentDate),
+                numberOfMonths: 2,
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+    </script>
+
+
+
+
+
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myCtrl', function($scope, $http) {
+
+          // $scope.adults =1;
+          // $scope.child =0;
+          // $scope.infants =0;
+
+          //   var button1 = document.getElementById("oneway");
+          //   var button2 = document.getElementById("roundtrip");
+
+            $scope.CityNameFrom = "";
+            $scope.searchCityName = function() {
+                // if (status == 1)
+                //     var search = $scope.CityNameFrom
+                // else
+                //     var search = $scope.CityNameTo
+
+                // console.log($scope.CityNameFrom)
+                $http({
+                        url: 'https://aviation-edge.com/api/public/airlineDatabase?key=c598c1-2df0db-9b4a01-a9223f-307964',
+
+                        method: 'GET'
+                    })
+                    .then(function mySuccess(response) {
+
+                        // if (status == 1)
+                            $scope.CityListFrom = response;
+
+                   // else
+                        //     $scope.CityListTo = response;
+
+                        console.log(response)
+
+                    }, function myError(error) {
+
+                    })
+            }
+
+            $scope.searchCityName()
+
+            $scope.flights = function (){
+
+                $scope.finalarray = [];
+                // console.log($scope.CityNameFrom)
+                $scope.CityListFrom.data.forEach(function(value,key){
+                    if($scope.CityNameFrom != undefined && value.nameAirline.toLowerCase().indexOf($scope.CityNameFrom) == 0){
+                        $scope.finalarray.push(value.nameAirline)
+                    }
+                })
+               }
+             // $scope.selectedValueTo = function(value1, value2) {
+            //     $scope.CityNameTo = value1 + " (" + value2 + ")";
+            //     $scope.CityListTo = []
+            // }
+
+
+            $scope.selectedValueFrom = function(value1) {
+                $scope.CityNameFrom = value1;
+                $scope.finalarray = [];
+            }
+
+           window.addEventListener("keydown", function (event) {
+              if (event.defaultPrevented) {
+                return; // Should do nothing if the default action has been cancelled
+              }
+
+              var handled = false;
+              if (event.key !== undefined) {
+                // Handle the event with KeyboardEvent.key and set handled true.
+              } else if (event.keyIdentifier !== undefined) {
+                // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
+              } else if (event.keyCode !== undefined) {
+                // Handle the event with KeyboardEvent.keyCode and set handled true.
+              }
+
+              if (handled) {
+                // Suppress "double action" if event handled
+                event.preventDefault();
+              }
+            }, true);
+
+            // $scope.selectedValueTo = function(value1, value2) {
+            //     $scope.CityNameTo = value1 + " (" + value2 + ")";
+            //     $scope.CityListTo = []
+            // }
+
+            // $scope.swapValues = function() {
+            //     var tmp = $scope.CityNameFrom
+            //     $scope.CityNameFrom = $scope.CityNameTo
+            //     $scope.CityNameTo = tmp
+
+            // }
+
+            // $scope.updatetravellers = function() {
+            //   $scope.totaltravellers = $scope.adults+$scope.child+$scope.infants +" Traveller(s)"
+            // }
+
+            // $scope.increment = function() {
+            //   if($scope.adults < 9 )
+            //   $scope.adults = $scope.adults + 1;
+            // $scope.updatetravellers()
+
+              
+            // }
+            // $scope.decrement = function() {
+            //    if($scope.adults > 0 )
+            //    $scope.adults = $scope.adults - 1;
+            //  $scope.updatetravellers()
+            // } 
+
+            // $scope.incremen = function() {
+            //   if($scope.child < 9 )
+            //   $scope.child = $scope.child + 1;
+            // $scope.updatetravellers()
+              
+            // }
+            // $scope.decremen = function() {
+            //   if($scope.child > 0 )
+            //    $scope.child = $scope.child - 1;
+            //  $scope.updatetravellers()
+            // } 
+
+            // $scope.increme = function() {
+            //   if($scope.infants < 9 )
+            //   $scope.infants = $scope.infants + 1;
+            // $scope.updatetravellers()
+              
+            // }
+            // $scope.decreme = function() {
+            //    if($scope.infants > 0 )
+            //    $scope.infants = $scope.infants - 1;
+            //  $scope.updatetravellers()
+            // }
+
+            // $scope.travellers = function() {
+            //   $scope.travels = true;
+
+            // }
+
+            // $scope.travel = function() {
+            //   $scope.travels = false;
+            // }
+
+            //send data
+
+            // $scope.sendData = function() {
+
+            // 	var depart = $('#datepickerd').val();
+            //     var returnfom = $('#datepickerr').val();
+            //     var fromCIty = $scope.CityNameFrom;
+            //     var toCIty = $scope.CityNameTo;
+            //     // var travelpsgcount = $('#traveller').val();
+            //     var flightclass = $('#class').val();
+            //     var adultcount = $scope.adults;
+            //     var childcount = $scope.child;
+            //     var infantcount = $scope.infants;
+                
+            //     // console.log(depart,returnfom,flightclass,adultcount,childcount,infantcount)
+
+            //     if (fromCIty == "" || fromCIty == undefined) {
+            //         alert('Please Enter City Name From')
+            //         return false;
+            //     }
+
+            //     if (toCIty == "" || toCIty == undefined) {
+            //         alert('Please Enter City Name To')
+            //         return false;
+            //     }
+
+            //     if (depart == "" || depart == undefined) {
+            //         alert('Please Enter The Date Of Depart')
+            //         return false;
+            //     }
+
+            //     if (button1.checked) {
+            //         window.location.href = "onewayflight.html?from=" + fromCIty + "&to=" + toCIty + "&depart="+ depart + "&returnfom=" + returnfom +"&Flightclass="+ flightclass +"&Adultcount="+ adultcount +"&Childcount="+ childcount +"&Infantcount="+infantcount;
+
+            //     } else if (button2.checked) {
+            //         if (returnfom == "") {
+            //             alert('Return date Is Needed For Roundtrip Booking')
+            //             return false;
+            //         }
+
+            //         window.location.href = "roundtripflight.html?from=" + fromCIty + "&to=" + toCIty + "&depart="+ depart + "&returnfom=" + returnfom+"&Flightclass="+flightclass+"&Adultcount="+adultcount+"&Childcount="+childcount+"&Infantcount="+infantcount;
+
+            //     }
+
+            // }
+
+        
+
+        });
+    </script>
+
+   
+
+</body>
+
+</html>

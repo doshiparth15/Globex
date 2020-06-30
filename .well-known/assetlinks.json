@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "addisababa.travel.guide",
+    "sha256_cert_fingerprints":
+    ["EA:E6:75:EB:60:2A:E1:18:7E:BE:E3:28:8A:03:59:C3:0E:2E:83:A5:54:F2:92:B7:5A:1E:79:7C:7F:2F:1A:A4"]
+  }
+}]

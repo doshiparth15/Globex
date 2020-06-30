@@ -1,0 +1,21 @@
+{
+  "short_name": "Globex",
+  "name": "Globexploration",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://www.globexploration.com",
+  "background_color": "#20072c",
+  "display": "standalone",
+  "scope": "",
+  "theme_color": "#20072c"
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <title>Property Data|Globexploration</title>
+
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#20072c">
+      <meta name="robots" content="index,follow">
+      <link rel="manifest" href="https://globexploration.com/manifest.json">
+      <link rel="alternate" hreflang="en" href="https://globexploration.com" />
+      <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+      <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="styles/animate.css">
+      <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      
+       
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+      <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+	
+	 <style type="text/css">
+	 	@charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+        
+        ng\:form {
+            display: block;
+        }
+        
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+        
+        .ng-anchor {
+            position: absolute;
+        }
+	 </style>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	var app = angular.module('myApp',[] );
+	app.controller('myCtrl', function($scope, $http) {
+
+
+ $scope.searchData = function(){ 
+
+
+   
+
+		    $http({
+
+		    	url:'https://ws.homeaway.com/public/myListings',
+
+		    	method:'GET',
+
+                headers:{
+                         'Authorization': 'Bearer 345nlGldfgnGjdfgi56n4gn34tADFBNDFdfopbndfpbDERBN'
+                      }
+
+		    })
+		    .then(function mySuccess(response){
+
+		    	$scope.PropertyData = response.data.data.myListings;
+         
+        console.log($scope.PropertyData)
+        
+		    
+      
+		    },function myError(error){
+
+	    	})
+
+
+      }
+
+
+$scope.searchData();
+
+	});
+</script>
+
+<!-- <script src="js/jquery.min.js"></script> -->
+
+
+</body>
+</html>
